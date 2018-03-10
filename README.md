@@ -1,4 +1,5 @@
-# Bitcoin Core for Docker
+# Bitcoin Core for Docker 
+[![Docker Pull](https://img.shields.io/docker/pulls/chaintope/bitcoin.svg)](https://hub.docker.com/r/chaintope/bitcoin/ )
 
 A simple Docker image of bitcoin-core; suitable for learning bitcoin using regtest or testnet.
 

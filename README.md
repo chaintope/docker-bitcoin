@@ -7,11 +7,13 @@ A simple Docker image of bitcoin-core; suitable for learning bitcoin using regte
 
 ### Using volume as datadir
 
- docker volume create --name=bitcoind-data
- docker run -v bitcoind-data:/root/.bitcoin --name=bitcoind -p 18332:18332 \
-     chaintope/bitcoin bitcoind -testnet -printtoconsole -rpcuser=bitcoin -rpcpassword=bitcoin
-     
+    docker volume create --name=bitcoind-data
+    docker run -v bitcoind-data:/root/.bitcoin --name=bitcoind \
+        -p 18332:18332 chaintope/bitcoin bitcoind -testnet \
+        -printtoconsole -rpcuser=bitcoin -rpcpassword=bitcoin
+
 ### Using host directory as datadir
 
- docker run -v ${pwd}/bitcoin:/root/.bitcoin --name=bitcoind -p 18332:18332 \
-     chaintope/bitcoin bitcoind -regtest -printtoconsole -rpcuser=bitcoin -rpcpassword=bitcoin
+    docker run -v ${pwd}/bitcoin:/root/.bitcoin --name=bitcoind \
+        -p 18332:18332 chaintope/bitcoin bitcoind -regtest \
+        -printtoconsole -rpcuser=bitcoin -rpcpassword=bitcoin
